@@ -11,6 +11,7 @@
   $err_email="";
   $phone="";
   $err_phone="";
+	$phoneCode="";
   $address="";
   $err_address="";
   $city="";
@@ -62,7 +63,7 @@
 			$name = $_POST["name"];
 		}
 
-    if(!isset($_POST["username"])){
+    if(empty($_POST["username"])){
 			$hasError = true;
 			$err_username="username Required";
 		}
@@ -70,9 +71,13 @@
 			$username = $_POST["username"];
 		}
     
-    if(!isset($_POST["password"])){
+    if(empty($_POST["password"])){
 			$hasError = true;
 			$err_password="password Required";
+		}
+		else if(strlen($_POST["password"]) < 8){
+			$hasError = true;
+			$err_password="Must contain at least 8 character";
 		}
 		else{
 			$password = $_POST["password"];
@@ -81,31 +86,42 @@
 			$hasError = true;
 			$err_confirmpassword="Confirm password Required";
 		}
+		
 		else{
 			$confirmpassword = $_POST["comfirnpassword"];
 		}
      
-    if(isset($_POST["email"])){
+    if(empty($_POST["email"])){
 			$hasError = true;
 			$err_email="Email Required";
 		}
+		else if(strpos($_POST["email"],"@") == false){
+			$hasError = true;
+      $err_email="Email must contain @ character";
+	  }
+	else if(strpos($_POST["email"],".") == false){
+			$hasError = true;
+      $err_email="Email must contain . character";
+	 }
 		else{
 			$email = $_POST["email"];
-		}
-		 
-
-
+	 }
 		
+	 if(empty($_POST["phone"])){
+		$hasError = true;
+		$err_phone="phone required";
+	}
+	else if(empty($_POST["phoneCode"])){
+		$hasError = true;
+		$err_phone="code required";
+	}
+	
+	else{
+					$phone=$_POST["phone"];
+		      $phoneCode=$_POST["phoneCode"];
+			}
 
-    if(!isset($_POST["phone"])){
-			$hasError = true;
-			$err_phone="Phone Number Required";
-		}
-		else{
-			$phone = $_POST["phone"];
-		}
-
-    if(!isset($_POST["address"])){
+    if(isset($_POST["address"])){
 			$hasError = true;
 			$err_address="Address Required";
 		}
@@ -223,13 +239,13 @@
 					<td><span> <?php echo $err_confirmpassword;?> </span></td>
 				</tr>
         <tr>
-					<td>Email</td>
-					<td>: <input type="text" name="email" placeholder="email">  </td>
+					<td> Email</td>
+					<td>: <input type="text" name="email" value="<?php echo $email; ?>"></td>
 					<td><span> <?php echo $err_email;?> </span></td>
 				</tr>
         <tr>
 					<td>Phone</td>
-					<td>: <input type="text" name="code" placeholder="code">-<input type="text" name="number" placeholder="number">  </td>
+					<td>: <input  type="text" placeholder="code" name="phonCode" value="<?php echo $phoneCode; ?>"> - <input placeholder="Number"  type="text" name="phone" value="<?php echo $phone; ?>"></td>
 					<td><span> <?php echo $err_phone;?> </span></td>
 				</tr>
         <tr>
