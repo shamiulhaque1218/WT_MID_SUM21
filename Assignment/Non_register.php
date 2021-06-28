@@ -9,24 +9,14 @@
   $err_phone="";
   $address="";
   $err_address="";
-  $birthday="";
-  $err_birthday="";
   $gender="";
 	$err_gender="";
-  
 	$comments="";
 	$err_comments="";
 	
 	$hasError=false;
 	
-	$array= array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31);
-  $array2= array("January","February","March","April","May","June","July","August","September","October","November","December");
-  $array3= array(1990,1991,1992,1993,1994,1995,1996,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010);
-	
-	
-
-	
-
+	//name
 	if(isset($_POST["submit"])){
 		if(empty($_POST["name"])){
 			$hasError = true;
@@ -39,6 +29,7 @@
 		else{
 			$name = $_POST["name"];
 		}
+		//bloodgroup
 
     if(empty($_POST["bloodgroup"])){
 			$hasError = true;
@@ -48,14 +39,16 @@
 			$bloodgroup = $_POST["bloodgroup"];
 
 		}
+		//quantity
      if(empty($_POST["quantity"])){
 			$hasError = true;
 			$err_quantity="Quantity Required";
 		}
+		
 		else{
 			$quantity = $_POST["quantity"];
 		}
-		
+		//phone
 	 if(empty($_POST["phone"])){
 		$hasError = true;
 		$err_phone="phone required";
@@ -66,6 +59,8 @@
 		      
 			}
 
+			//address
+
     if(empty($_POST["address"])){
 			$hasError = true;
 			$err_address="Address Required";
@@ -74,21 +69,17 @@
 			$address = $_POST["address"];
 		}
 
-    if(empty($_POST["birthday"])){
-			$hasError = true;
-			$err_birthday="Birthday Required";
-		}
-		else{
-			$birthday = $_POST["birthday"];
-		}
+		//gender
 
-		if(!isset($_POST["gender"])){
+		if(empty($_POST["gender"])){
 			$hasError = true;
 			$err_gender="Gender Required";
 		}
 		else{
 			$gender = $_POST["gender"];
 		}
+
+     //comments
 
 		if(empty($_POST["comments"])){
 			$hasError = true;
@@ -106,15 +97,10 @@
       echo $_POST["quantity"]."<br>";
       echo $_POST["phone"]."<br>";
       echo $_POST["address"]."<br>";
-      echo $_POST["birthday"]."<br>";
 			echo $_POST["gender"]."<br>";
     	echo $_POST["comments"]."<br>";
 			
-
-			foreach($arr as $e){
-				echo "$e<br>";
-			}
-		}
+		}	
 	}
 	?>
 
@@ -150,52 +136,13 @@
 					<td>: <input type="text" name="address" placeholder="address">   </td>
 					<td><span> <?php echo $err_address;?> </span></td>
 				</tr>
+				
         <tr>
-            <td>Birthday</td>
-            <td>: <select name="Day"> 
-            <option >Day</option> 
-            <?php
-							foreach($array as $d){
-								if($d == $birthday) 
-									echo "<option selected>$d</option>";
-								else
-									echo "<option>$d</option>";
-							}
-						?> 
-                  </select>
-           <select name="Day">
-            <option >Month</option> 
-            <?php
-							foreach($array2 as $m){
-								if($m == $birthday) 
-									echo "<option selected>$m</option>";
-								else
-									echo "<option>$m</option>";
-							}
-						?> 
-            </select>
-             <select name="Year">
-            <option >Year</option> 
-            <?php
-							foreach($array3 as $y){
-								if($y == $birthday) 
-									echo "<option selected>$y</option>";
-								else
-									echo "<option>$y</option>";
-							}
-						?> 
-              </select>
-
-
-            <td><span> <?php echo $err_birthday;?> </span></td>   
-				<tr>
 					<td>Gender</td>
 					<td>: <input type="radio" value="Male" <?php if($gender=="Male") echo "checked"; ?> name="gender"> Male <input type="radio"  value="Female"  <?php if($gender=="Female") echo "checked"; ?>name="gender" > Female </td>
 					<td><span> <?php echo $err_gender;?> </span></td>
 				</tr>
 
-        
-				
 				<tr>
 					<td>Comments</td>
 					<td>: <textarea name="comments" ><?php echo $comments; ?></textarea>
@@ -209,9 +156,6 @@
 					
 				</tr>
 			</table>
-			
-			
-			
 		</fieldset>
 		</form>
 	</body>
