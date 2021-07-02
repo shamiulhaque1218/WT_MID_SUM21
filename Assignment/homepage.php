@@ -3,7 +3,7 @@
                 <title>Homepage</title>
        </head>
        <body>
-        <p align="right"> <b>Need Blood?Call:01624000000 <br> <a href="Non_register.php">Log In Or Create </a> </b>  </p>
+        <p align="right"> <b>Need Blood?Call:01624000000 <br> <a href="AllLogIn.php">Log In/Create <br> Or Blood Request </a> </b> </p>
         <table >
            
           <tr>
@@ -14,21 +14,23 @@
                 <td align="right">
                  <h1>Blood Donation Organization Bangladesh  </h1>
                </td>
-               
+              
           </table>
            <table> 
               <tr>  
           <td ><a href="homepage.php"><h2>Home__</h2></a></td>
-          <td><a href="blood2.php"><h2>Why give blood__ </h2></a></td>
-          <td><a href="blood3.php"><h2>Who can give blood__ </h2></a></td> 
+          <td><a href="blood2.php"><h2>Why give blood__</h2></a></td>
+          <td><a href="blood3.php"><h2>Who can give blood__</h2></a></td> 
           <td><a href="blood4.php"> <h2>The donation process__</h2></a> </td>
           <td> <a href="blood5.php"> <h2>Where to donate__</h2></a></td> 
           <td><a href="blood6.php"><h2>News and campaigns__</h2></a></td>
           <td><a href="blood7.php"> <h2>Contact Us</h2></a></td>
                </tr>
+               <p align="right"> <b> <a href="plasma.php"> Plasma Donation</a> </b> </p>
         </table>
         <img src="96.jpg" height="360" width="1356">
-        <a><h2>We urgently need more blood donations through the summer to support the people.</h2>
+        
+        <a><h2>We urgently need more blood donations through the summer to support the people.</b>
           <br> Some donor centres still have availability. Please book and keep your appointment to donate if you can.
           <br> <h1>Donate Blood</h1>
           <br> <h3> Across Bangladesh, every day there remains an urgent need for all types of blood groups. Especially donors with rare blood groups such as O Negative, B Negative and A Negative are in high demand. Your timely response is essential to the supply of healthy blood for the massive daily demand we face.
