@@ -96,8 +96,6 @@
 			echo $_POST["gender"]."<br>";
     	echo $_POST["comments"]."<br>";
 			
-
-			
 		}
 	}
 	?>
@@ -105,7 +103,8 @@
 <html> 
 	<head>  <title>Plasma Donation</title>   </head>
 	<body>
-		<form action="" method="post"> 
+	<p align="left"> <a href="homepage.php"> <b> Home </b> </a> </p>
+			<form action="" method="post"> 
 		<fieldset>  
 		<h1>Plasma Donation</h1>
 			<table>

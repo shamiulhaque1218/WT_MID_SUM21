@@ -107,6 +107,7 @@
 <html> 
 	<head>  <title> Non Register Form</title>   </head>
 	<body>
+	<p align="left"> <a href="homepage.php"> <b>Home</b> </a> </p>
 		<form action="" method="post"> 
 		<fieldset>  
 		      <h1>Non Register Form</h1>

@@ -3,7 +3,7 @@
             <title> Log In Page </title>
      </head>
 <body>
-       
+          <p align="left"> <a  href="homepage.php"> <b>Home </b> </a> </p>
           <a href="   "><h2>Admin Log In</h2></a> <br>
           <a href="   "><h2>Register Log In</h2></a> <br>
           <a href="    "> <h2>Donar Log In</h2></a>  <br>
